@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mojik.js</title>
+    <!-- <link rel="stylesheet" href="../dist/mojik.css"> -->
+    <link rel="stylesheet" href="../src/index.css">
+    <style>
+      html {
+        font-family: "Hiragino Sans", "Meiryo", sans-serif;
+        line-height: 1.75;
+      }
+
+      body {
+        max-width: 36rem;
+        margin: 0 auto;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        color: hsl(0, 0%, 14%);
+        background-color: hsl(0, 0%, 99%);
+      }
+
+      h1 {
+        margin: 1.75rem 0;
+        line-height: 1.25;
+      }
+
+      p {
+        margin: 1.75rem 0;
+        font-kerning: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mojik</h1>
+    <p><b>Windows 10（ウィンドウズ テン）</b>は、マイクロソフトが開発およびリリースしている、Windowsシリーズに属するパーソナルコンピュータおよび8インチ以上のタブレット用のオペレーティングシステム（OS）である。バージョン1507・1511のコードネームは「<b>Threshold</b>（スレッショルド）」、バージョン1607・1703のコードネームは「<b>Redstone</b>（レッドストーン）」。</p>
+    <p>2015年7月29日（日本時間7月30日）にWindows 7 SP1、および8.1 Updateユーザー限定の無償アップグレードプログラムを含む一般への提供が開始され、同年8月1日にはボリュームライセンス契約で利用可能なEnterpriseとEducationおよびDSP（Delivery Service Partner）版が、そして同年9月4日には新規インストールが可能なリテール版が発売された。</p>
+    <p>2016年7月28日（日本時間7月29日）をもって、予告されていた通りWindows 7 SP1/8.1 Updateからの1年間限定の無償アップグレードプログラムの提供を終了したが、それ以降も障碍者向けの支援技術製品のユーザーはこれまで通り無償でアップグレードすることができる。</p>
+    <script src="../dist/mojik.js"></script>
+    <script>
+      document.querySelectorAll('p').forEach(Mojik.compose);
+    </script>
+  </body>
+</html>
