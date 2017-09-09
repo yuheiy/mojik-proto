@@ -1,8 +1,5 @@
+import childNodeReplaceWith from './childNodeReplaceWith'
 import processText from './processText'
-
-// interface ChildNode {
-//   replaceWith: (...nodes: Array<Node | string>) => void;
-// }
 
 const getTextNodesRecursive = (startNode: Node): Array<Text> => {
   const treeWalker = document.createTreeWalker(startNode, NodeFilter.SHOW_TEXT)
@@ -17,7 +14,7 @@ const createDocumentFragmentFromRawHtml = (rawHtml: string): DocumentFragment =>
   const docFrag = document.createDocumentFragment()
   const parser = document.createElement('div')
   parser.innerHTML = rawHtml
-  while (parser.hasChildNodes()) {
+  while (parser.firstChild) {
     docFrag.appendChild(parser.firstChild)
   }
   return docFrag
@@ -29,7 +26,7 @@ export const compose = (el: HTMLElement) => {
   getTextNodesRecursive(el).forEach((textNode) => {
     const rawHtml = processText(textNode.nodeValue)
     const docFrag = createDocumentFragmentFromRawHtml(rawHtml)
-    textNode.replaceWith(docFrag)
+    childNodeReplaceWith(textNode, docFrag)
   })
 
   // todo: detect line head
