@@ -4,13 +4,13 @@ import processText from './processText'
 //   replaceWith: (...nodes: Array<Node | string>) => void;
 // }
 
-const getTextNodesRecursive = (startNode: Node): Array<Node> => {
+const getTextNodesRecursive = (startNode: Node): Array<Text> => {
   const treeWalker = document.createTreeWalker(startNode, NodeFilter.SHOW_TEXT)
-  const nodes = []
+  const textNodes = []
   while (treeWalker.nextNode()) {
-    nodes.push(treeWalker.currentNode)
+    textNodes.push(treeWalker.currentNode as Text)
   }
-  return nodes
+  return textNodes
 }
 
 const createDocumentFragmentFromRawHtml = (rawHtml: string): DocumentFragment => {
