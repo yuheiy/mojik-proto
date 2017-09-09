@@ -28,9 +28,10 @@ export const compose = (el: HTMLElement) => {
     const docFrag = createDocumentFragmentFromRawHtml(rawHtml)
     childNodeReplaceWith(textNode, docFrag)
   })
+  // todo: detect paragraph head
 
-  // todo: detect line head
-  // todo: monitor resize and update line head
+  // todo: detect line head and line end
+  // todo: monitor resize and update line head and line end
   // todo: destroy mojik when element is deleted
   // todo: add destroy API for library user
 }
