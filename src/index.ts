@@ -26,9 +26,9 @@ export const compose = (el: HTMLElement) => {
   // sketch
   // const textNodes = getTextNodesRecursive(el)
   // const textValues = textNodes.map(({nodeValue}) => nodeValue)
-  // const htmlSlices = new SomeParser(textValues).parse()
+  // const rawHtmlFragments = parser.parse(lexer.tokenize(textValues))
   // textNodes.forEach((textNode, idx) => {
-  //   const rawHtml = htmlSlices[idx]
+  //   const rawHtml = rawHtmlFragments[idx]
   //   const docFrag = createDocumentFragmentFromRawHtml(rawHtml)
   //   childNodeReplaceWith(textNode, docFrag)
   // })
