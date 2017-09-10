@@ -37,6 +37,11 @@ const arrayFind = <T>(arr: Array<T>, predicate: (item: T, idx: number, arr: Arra
 const ponyfill = (childNode: Element | DocumentType | CharacterData, ...nodes: Array<Node | string>) => {
   const childNodeInterface = arrayFind([Element, DocumentType, CharacterData], (interfaceImpl) => childNode instanceof interfaceImpl)
 
+  // for JavaScript
+  if (!childNodeInterface) {
+    throw new TypeError('childNode must be Element, DocumentType or CharacterData')
+  }
+
   if (typeof (childNodeInterface as any).prototype.replaceWith === 'function') {
     return (childNode as any).replaceWith(...nodes);
   }
