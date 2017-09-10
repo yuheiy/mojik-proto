@@ -23,6 +23,17 @@ const createDocumentFragmentFromRawHtml = (rawHtml: string): DocumentFragment =>
 export const compose = (el: HTMLElement) => {
   // const baseNode = el.cloneNode(true)
 
+  // sketch
+  // const textNodes = getTextNodesRecursive(el)
+  // const textValues = textNodes.map(({nodeValue}) => nodeValue)
+  // const htmlSlices = new SomeParser(textValues).parse()
+  // textNodes.forEach((textNode, idx) => {
+  //   const rawHtml = htmlSlices[idx]
+  //   const docFrag = createDocumentFragmentFromRawHtml(rawHtml)
+  //   childNodeReplaceWith(textNode, docFrag)
+  // })
+
+  // it works
   getTextNodesRecursive(el).forEach((textNode) => {
     const rawHtml = processText(textNode.nodeValue)
     const docFrag = createDocumentFragmentFromRawHtml(rawHtml)
